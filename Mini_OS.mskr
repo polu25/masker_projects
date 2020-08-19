@@ -1,0 +1,171 @@
+xcolor white
+clear
+color black
+print "Hello, welcome to my OS Install."
+color black
+print "To agree with the download of the OS, press Y. Otherwise, press any other key to cancel."
+
+var Install
+var home_choice
+var user_input
+var run_or_stay
+xxinput Install
+
+gotoif Install "Y" download
+
+color red
+print "Install cancelled by user."
+exit
+cp download
+
+var LoadingPercent "0"
+
+cp loop
+sleepx 100
+clear
+xprint "Loading... | "
+xprint LoadingPercent
+print "%"
+add LoadingPercent 2
+gotoif LoadingPercent "102" loope
+goto loop
+
+cp loope
+clear
+print "Loading... | 100%"
+sleep 5
+clear
+
+var username
+
+xcolor white
+color black
+print "Enter your new username:"
+xinput username
+sleep 5
+clear
+
+var user_password
+
+xcolor white
+color black
+print "Enter your new password:"
+input user_password
+sleep 5
+clear
+
+xcolor white
+color black
+print "Welcome to your new computer!"
+sleep 4
+clear
+
+var lockscreen
+cp lockscreen
+print "Enter your password."
+input lockscreen
+sleep 4
+clear
+
+gotoif user_password lockscreen main_menu
+color red
+print "Incorrect!"
+color black
+goto lockscreen
+
+cp main_menu
+print "1: Open Fantasmas"
+print "2: Open Maskbook"
+print
+xinput home_choice
+sleep 2
+clear
+
+gotoif home_choice "1" fantasmas
+gotoif home_choice "2" maskbook
+color red
+print "Invalid Choice!"
+color black
+goto main_menu
+
+
+// Fantasmas
+cp fantasmas
+clear
+print "You got lost on your way home from the gas station."
+print "and you see three houses that look like yours."
+print "Which one do you go into?"
+print 
+print "2468, 2469, 2470"
+input user_input
+gotoif user_input "2469" lv2
+goto you_died
+
+cp you_died
+clear
+print "You Died"
+sleep 3
+goto fantasmas
+
+cp lv2
+clear
+print "You see your mom!"
+print "But an angel tell you that it's not your real mom."
+print "So you dont trust her."
+print "She pulls out a knife. "Come here! she says."
+print "What do you do?"
+print "Type 1 or 2 to run or stay!"
+input user_input
+clear
+print "She grabs you by the neck and drags you to the dark basement."
+print "After a bit of wandering, you find a hole in the floor."
+print "1 to go in. 2 to wander more."
+
+input user_input
+gotoif user_input "1" lv4
+goto you_died
+
+cp lv4
+clear
+print "You fall into a dark wet tunnel ending at a right or left."
+print "1 to go left, 2 to go right."
+input user_input
+gotoif user_input "2" lv5
+goto you_died
+
+cp lv5
+clear
+print "You come out a window on the roof of hell."
+print "The only way is to jump off."
+print "You fall over the edge and pass out in the gas station parking lot."
+sleep 7
+clear
+print "You got lost on your way home from the gas station."
+print "and you see three houses that look like yours."
+print "Which one do you go into?"
+print
+print "NULL, NULL, NULL"
+sleep 3
+clear
+print "Just kidding!"
+print "Going to main screen in 3sec!"
+sleep 3
+clear
+goto main_menu
+
+// Maskbook
+cp maskbook
+print "hello welcome to my masker code book"
+
+print "the first comannd i will talk abought is print"
+print "print "hello world""
+print "that command will print hello world in the terminal"
+sleep 6
+clear
+
+print "the second comannd i will talk abought is var"
+print "var"
+print "that command will create variable"
+sleep 7
+clear 
+
